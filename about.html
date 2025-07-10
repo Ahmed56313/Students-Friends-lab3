@@ -30,17 +30,22 @@
       align-items: center;
       background: #2563eb;
       padding: 10px 20px;
+      flex-wrap: wrap;
     }
-    nav a {
+    .back-btn {
+      background: #2563eb;
       color: white;
-      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
       font-weight: bold;
-      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
+    .back-btn:hover {
+      background: #1d4ed8;
+    }
+    body.dark .back-btn {
+      background: #1e40af;
     }
     .toggle {
       background: #1d4ed8;
@@ -51,19 +56,15 @@
       cursor: pointer;
       font-weight: bold;
     }
-    .back {
-      text-decoration: none;
-      color: #2563eb;
-      display: inline-block;
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-    .back:hover {
-      text-decoration: underline;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
     }
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -75,13 +76,14 @@
 </header>
 
 <nav>
-  <a href="index.html">← Back to Home</a>
+  <a href="index.html" class="back-btn">🔙 Go Back Home</a>
   <button class="toggle" onclick="toggleMode()">🌗 Toggle Mode</button>
 </nav>
 
 <div class="container">
-  <p><strong>Student's Friend</strong> is a free AI tools hub created to help learners and students with smart tools like ChatGPT, Grammarly, Notion AI, and more. All links are 100% safe, educational and useful for productivity.</p>
-  <p>Created with 💙 by <strong>Gusso</strong> from Sialkot, Pakistan.</p>
+  <p><strong>Student's Friend</strong> is a free AI tools hub created to help learners and students with smart tools like ChatGPT, Grammarly, Notion AI, and more.</p>
+  <p>All links are safe, educational and helpful for productivity. Built for students who want to use AI smartly.</p>
+  <p>Made with ❤️ by <strong>Gusso</strong> from Chaprar, Sialkot, Punjab, Pakistan.</p>
 </div>
 
 <script>
@@ -92,3 +94,4 @@
 
 </body>
 </html>
+
