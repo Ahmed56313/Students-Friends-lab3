@@ -2,18 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Student's Friend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Student's Friend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; color: #1e293b; margin: 0; padding: 20px; }
-    h1 { color: #1d4ed8; }
-    p { line-height: 1.6; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #1e293b;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2563eb;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    .toggle {
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .back {
+      text-decoration: none;
+      color: #2563eb;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .back:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
+
+<header>
   <h1>About Student's Friend</h1>
-  <p>Student's Friend is a free online resource that brings together AI-powered tools for students to learn smarter and faster. 
-  Whether you're doing homework, writing essays, or creating presentations, our selected tools are here to help you every step of the way. 
-  Built with ❤️ for students in Pakistan and around the world.</p>
+</header>
+
+<nav>
+  <a href="index.html">← Back to Home</a>
+  <button class="toggle" onclick="toggleMode()">🌗 Toggle Mode</button>
+</nav>
+
+<div class="container">
+  <p><strong>Student's Friend</strong> is a free AI tools hub created to help learners and students with smart tools like ChatGPT, Grammarly, Notion AI, and more. All links are 100% safe, educational and useful for productivity.</p>
+  <p>Created with 💙 by <strong>Gusso</strong> from Sialkot, Pakistan.</p>
+</div>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle('dark');
+  }
+</script>
+
 </body>
 </html>
