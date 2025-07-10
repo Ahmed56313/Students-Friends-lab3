@@ -4,117 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student's Friend – Free AI Tools for Learners</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
-    :root {
-      --bg-light: #f0f4f8;
-      --bg-dark: #0f172a;
-      --text-light: #1e293b;
-      --text-dark: #f1f5f9;
-      --card-bg-light: white;
-      --card-bg-dark: #1e293b;
-      --accent: #2563eb;
-    }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
       margin: 0;
       padding: 0;
-      transition: background 0.3s, color 0.3s;
+      background: #f0f4f8;
+      color: #1e293b;
     }
-
-    body.dark-mode {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
     header {
       background-color: #1e3a8a;
       color: white;
       padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     header h1 {
       margin-bottom: 10px;
       font-size: 2rem;
     }
-
     nav {
-      background: var(--accent);
-      text-align: center;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
+      background: #3b82f6;
+      padding: 10px 20px;
     }
-
     nav a {
-      display: inline-block;
-      padding: 12px 20px;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
+      padding: 8px 16px;
+      background: #2563eb;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
-
     nav a:hover {
       background: #1d4ed8;
     }
-
-    .dark-toggle {
-      margin: 10px auto;
-      text-align: center;
-    }
-
-    .dark-toggle button {
-      padding: 10px 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
     .container {
       padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
     }
-
     .card {
-      background: var(--card-bg-light);
+      background: white;
       padding: 25px;
       margin: 20px 0;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease-in-out, background 0.3s;
+      transition: transform 0.2s ease-in-out;
     }
-
-    .dark-mode .card {
-      background: var(--card-bg-dark);
-    }
-
     .card:hover {
       transform: translateY(-4px);
     }
-
     .card h2 {
       margin-top: 0;
       font-size: 1.5rem;
-      color: var(--accent);
+      color: #1d4ed8;
     }
-
     .card p {
       font-size: 1rem;
       margin-bottom: 15px;
     }
-
     .card a {
-      background: var(--accent);
+      background: #2563eb;
       color: white;
       padding: 10px 16px;
       text-decoration: none;
@@ -122,11 +77,9 @@
       font-weight: 500;
       transition: background 0.3s;
     }
-
     .card a:hover {
       background: #1e40af;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -134,22 +87,16 @@
       background-color: #e0e7ff;
       margin-top: 40px;
     }
-
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
       .card h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       .card p, .card a {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .card h2 {
-        font-size: 1.1rem;
-      }
-      .card p, .card a {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -162,15 +109,11 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">📘 About</a>
+  <a href="contact.html">✉️ Contact</a>
+  <a href="privacy.html">🔒 Privacy</a>
 </nav>
-
-<div class="dark-toggle">
-  <button onclick="toggleDarkMode()">🌗 Toggle Dark / Light Mode</button>
-</div>
 
 <div class="container">
   <div class="card">
@@ -205,12 +148,7 @@
   <p>© 2025 Student's Friend</p>
 </footer>
 
-<script>
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-</script>
-
 </body>
 </html>
+
 
