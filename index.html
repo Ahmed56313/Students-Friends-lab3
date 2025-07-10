@@ -2,32 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Student's Friend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student's Friend – Free AI Tools for Learners</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap">
   <style>
-    body { font-family: Arial, sans-serif; background: #f9fafb; color: #111827; margin: 0; padding: 0; }
-    nav { background: #2563eb; padding: 12px 0; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: auto; padding: 30px 20px; }
-    h1 { color: #2563eb; font-size: 2rem; }
-    p { font-size: 1.1rem; line-height: 1.7; }
+    :root {
+      --bg-light: #f0f4f8;
+      --bg-dark: #0f172a;
+      --text-light: #1e293b;
+      --text-dark: #f1f5f9;
+      --card-bg-light: white;
+      --card-bg-dark: #1e293b;
+      --accent: #2563eb;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    nav {
+      background: var(--accent);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      background: #1d4ed8;
+    }
+
+    .dark-toggle {
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    .dark-toggle button {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card-bg-light);
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease-in-out, background 0.3s;
+    }
+
+    .dark-mode .card {
+      background: var(--card-bg-dark);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      background: var(--accent);
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+      background-color: #e0e7ff;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .card h2 {
+        font-size: 1.3rem;
+      }
+      .card p, .card a {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card h2 {
+        font-size: 1.1rem;
+      }
+      .card p, .card a {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
+<header>
+  <h1>🎓 Student's Friend – AI Tools for Learners</h1>
+  <p>Smart, free & helpful tools for every student. Learn faster with AI!</p>
+</header>
 
-  <div class="container">
-    <h1>About Student's Friend</h1>
-    <p>Student's Friend is your personal hub for free, trusted AI tools to make learning easier and smarter. 
-    We help students with homework, grammar, writing, research, and more by linking to the most helpful AI sites like ChatGPT, Grammarly, and Quillbot.
-    This website was proudly created by Gusso in Chaprar, Sialkot for students across Pakistan and the world. 🎓🌍</p>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy</a>
+</nav>
+
+<div class="dark-toggle">
+  <button onclick="toggleDarkMode()">🌗 Toggle Dark / Light Mode</button>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>🔍 ChatGPT</h2>
+    <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
+    <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
   </div>
+  <div class="card">
+    <h2>📝 Grammarly</h2>
+    <p>Fix grammar and polish your writing — perfect for school assignments.</p>
+    <a href="https://www.grammarly.com" target="_blank">Try Grammarly</a>
+  </div>
+  <div class="card">
+    <h2>🔁 Quillbot</h2>
+    <p>Paraphrase your content easily with Quillbot — stay original and clear.</p>
+    <a href="https://www.quillbot.com" target="_blank">Use Quillbot</a>
+  </div>
+  <div class="card">
+    <h2>🧐 Notion AI</h2>
+    <p>Organize notes, manage tasks, and use AI for creative writing.</p>
+    <a href="https://www.notion.so/product/ai" target="_blank">Explore Notion AI</a>
+  </div>
+  <div class="card">
+    <h2>🎨 Remove.bg</h2>
+    <p>Remove image backgrounds in one click — useful for projects and thumbnails.</p>
+    <a href="https://www.remove.bg" target="_blank">Try Remove.bg</a>
+  </div>
+</div>
+
+<footer>
+  <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
+  <p>© 2025 Student's Friend</p>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
 </body>
 </html>
+
