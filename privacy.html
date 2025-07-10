@@ -2,18 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy - Student's Friend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Student's Friend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; color: #1e293b; margin: 0; padding: 20px; }
-    h1 { color: #1d4ed8; }
-    p { line-height: 1.6; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #1e293b;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2563eb;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    .back-btn {
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #1d4ed8;
+    }
+    body.dark .back-btn {
+      background: #1e40af;
+    }
+    .toggle {
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+<header>
   <h1>Privacy Policy</h1>
-  <p>We respect your privacy. Student's Friend does not collect personal data or store any user information. 
-  All links provided on this site direct you to safe and trusted tools like ChatGPT, Grammarly, Quillbot, and others. 
-  Your activity on those external websites is subject to their respective privacy policies.</p>
+</header>
+
+<nav>
+  <a href="index.html" class="back-btn">🔙 Go Back Home</a>
+  <button class="toggle" onclick="toggleMode()">🌗 Toggle Mode</button>
+</nav>
+
+<div class="container">
+  <p>We respect your privacy. Student's Friend does not collect, store or track any personal data.</p>
+  <p>All external links provided (like ChatGPT, Grammarly, Notion AI) open their own platforms and are subject to their policies.</p>
+  <p>If you have any concerns, feel free to email: <strong>meharahmed58458@gmail.com</strong></p>
+</div>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle('dark');
+  }
+</script>
+
 </body>
 </html>
