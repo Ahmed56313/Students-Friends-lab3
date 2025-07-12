@@ -1,45 +1,67 @@
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="description" content="A smart AI tool to help students and friends with studies, tasks, and advice. Created by Ahmed.">
-<meta name="keywords" content="student helper, AI study tool, friend helper, AI for friends, school help, homework AI">
-<meta name="author" content="Ahmed">
-
+  <meta name="keywords" content="student helper, AI study tool, friend helper, AI for friends, school help, homework AI">
+  <meta name="author" content="Ahmed">
   <meta name="google-site-verification" content="v3TRLRHHOiYn2TFAX0CfGt6iv0_z6PQVd2wFFjL80tY" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student's Friend – Free AI Tools for Learners</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
+    :root {
+      --bg-color: #f0f4f8;
+      --text-color: #1e293b;
+      --header-bg: #1e3a8a;
+      --nav-bg: #3b82f6;
+      --nav-hover: #1d4ed8;
+      --card-bg: #ffffff;
+      --footer-bg: #e0e7ff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --text-color: #e2e8f0;
+      --header-bg: #1e40af;
+      --nav-bg: #1e3a8a;
+      --nav-hover: #3b82f6;
+      --card-bg: #1e293b;
+      --footer-bg: #1e293b;
+    }
+
     body {
-      
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
-      color: #1e293b;
+      background: var(--bg-color);
+      color: var(--text-color);
     }
+
     header {
-      background-color: #1e3a8a;
+      background-color: var(--header-bg);
       color: white;
       padding: 30px 20px;
       text-align: center;
     }
+
     header h1 {
       margin-bottom: 10px;
       font-size: 2rem;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      background: #3b82f6;
+      background: var(--nav-bg);
       padding: 10px 20px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -49,34 +71,56 @@
       border-radius: 6px;
       transition: background 0.3s;
     }
+
     nav a:hover {
-      background: #1d4ed8;
+      background: var(--nav-hover);
     }
+
+    .theme-toggle {
+      padding: 8px 16px;
+      background: #0ea5e9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: #0369a1;
+    }
+
     .container {
       padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
     }
+
     .card {
-      background: white;
+      background: var(--card-bg);
       padding: 25px;
       margin: 20px 0;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: transform 0.2s ease-in-out;
     }
+
     .card:hover {
       transform: translateY(-4px);
     }
+
     .card h2 {
       margin-top: 0;
       font-size: 1.5rem;
       color: #1d4ed8;
     }
+
     .card p {
       font-size: 1rem;
       margin-bottom: 15px;
     }
+
     .card a {
       background: #2563eb;
       color: white;
@@ -85,25 +129,30 @@
       border-radius: 6px;
       font-weight: 500;
       transition: background 0.3s;
-    } 
+    }
+
     .card a:hover {
       background: #1e40af;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       color: #6b7280;
-      background-color: #e0e7ff;
+      background-color: var(--footer-bg);
       margin-top: 40px;
     }
+
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
         gap: 10px;
       }
+
       .card h2 {
         font-size: 1.2rem;
       }
+
       .card p, .card a {
         font-size: 0.95rem;
       }
@@ -111,51 +160,57 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>🎓 Student's Friend – AI Tools for Learners</h1>
+    <p>Smart, free & helpful tools for every student. Learn faster with AI!</p>
+  </header>
 
-<header>
-  <h1>🎓 Student's Friend – AI Tools for Learners</h1>
-  <p>Smart, free & helpful tools for every student. Learn faster with AI!</p>
-</header>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">📘 About</a>
+    <a href="contact.html">✉️ Contact</a>
+    <a href="privacy.html">🔒 Privacy</a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+  </nav>
 
-<nav>
-  <a href="index.html">🏠 Home</a>
-  <a href="about.html">📘 About</a>
-  <a href="contact.html">✉️ Contact</a>
-  <a href="privacy.html">🔒 Privacy</a>
-</nav>
+  <div class="container">
+    <div class="card">
+      <h2>🔍 ChatGPT</h2>
+      <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
+      <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
+    </div>
+    <div class="card">
+      <h2>📝 Grammarly</h2>
+      <p>Fix grammar and polish your writing — perfect for school assignments.</p>
+      <a href="https://www.grammarly.com" target="_blank">Try Grammarly</a>
+    </div>
+    <div class="card">
+      <h2>🔁 Quillbot</h2>
+      <p>Paraphrase your content easily with Quillbot — stay original and clear.</p>
+      <a href="https://www.quillbot.com" target="_blank">Use Quillbot</a>
+    </div>
+    <div class="card">
+      <h2>🧐 Notion AI</h2>
+      <p>Organize notes, manage tasks, and use AI for creative writing.</p>
+      <a href="https://www.notion.so/product/ai" target="_blank">Explore Notion AI</a>
+    </div>
+    <div class="card">
+      <h2>🎨 Remove.bg</h2>
+      <p>Remove image backgrounds in one click — useful for projects and thumbnails.</p>
+      <a href="https://www.remove.bg" target="_blank">Try Remove.bg</a>
+    </div>
+  </div>
 
-<div class="container">
-  <div class="card">
-    <h2>🔍 ChatGPT</h2>
-    <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
-    <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
-  </div>
-  <div class="card">
-    <h2>📝 Grammarly</h2>
-    <p>Fix grammar and polish your writing — perfect for school assignments.</p>
-    <a href="https://www.grammarly.com" target="_blank">Try Grammarly</a>
-  </div>
-  <div class="card">
-    <h2>🔁 Quillbot</h2>
-    <p>Paraphrase your content easily with Quillbot — stay original and clear.</p>
-    <a href="https://www.quillbot.com" target="_blank">Use Quillbot</a>
-  </div>
-  <div class="card">
-    <h2>🧐 Notion AI</h2>
-    <p>Organize notes, manage tasks, and use AI for creative writing.</p>
-    <a href="https://www.notion.so/product/ai" target="_blank">Explore Notion AI</a>
-  </div>
-  <div class="card">
-    <h2>🎨 Remove.bg</h2>
-    <p>Remove image backgrounds in one click — useful for projects and thumbnails.</p>
-    <a href="https://www.remove.bg" target="_blank">Try Remove.bg</a>
-  </div>
-</div>
+  <footer>
+    <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
+    <p>© 2025 Student's Friend</p>
+  </footer>
 
-<footer>
-  <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
-  <p>© 2025 Student's Friend</p>
-</footer>
-
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
 </body>
 </html>
