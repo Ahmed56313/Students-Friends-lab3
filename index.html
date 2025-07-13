@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="theme-color" content="#f0f4f8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
-
   <meta name="description" content="A smart AI tool hub to help students and friends with studies, tasks, and advice. Created by Ahmed.">
   <meta name="keywords" content="AI tools hub, student helper, AI study tool, friend helper, AI for friends, school help, homework AI">
   <meta name="author" content="Ahmed">
   <meta name="google-site-verification" content="v3TRLRHHOiYn2TFAX0CfGt6iv0_z6PQVd2wFFjL80tY" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1117">
   <title>AI Tools Hub</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f0f4f8;
-      --text-color: #1e293b;
-      --header-bg: #1e3a8a;
-      --nav-bg: #3b82f6;
-      --nav-hover: #1d4ed8;
-      --card-bg: #ffffff;
-      --footer-bg: #e0e7ff;
+      --bg-color: #18082d;
+      --text-color: #ffffff;
+      --header-bg: #2e0a5e;
+      --nav-bg: #3b0d74;
+      --nav-hover: #c084fc;
+      --card-bg: #220c44;
+      --footer-bg: #1a0733;
+      --glow-color: #c084fc;
     }
 
     [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #e2e8f0;
-      --header-bg: #1e40af;
-      --nav-bg: #1e3a8a;
-      --nav-hover: #3b82f6;
-      --card-bg: #1e293b;
-      --footer-bg: #1e293b;
+      --bg-color: #18082d;
+      --text-color: #ffffff;
+      --header-bg: #2e0a5e;
+      --nav-bg: #3b0d74;
+      --nav-hover: #c084fc;
+      --card-bg: #220c44;
+      --footer-bg: #1a0733;
+      --glow-color: #c084fc;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       margin: 0;
       padding: 0;
       background: var(--bg-color);
@@ -52,42 +52,39 @@
     header h1 {
       margin-bottom: 10px;
       font-size: 2rem;
+      text-shadow: 0 0 10px var(--glow-color);
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      background: linear-gradient(to right, #3b82f6, #1d4ed8);
-      padding: 14px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: var(--nav-bg);
+      padding: 12px 20px;
+      box-shadow: 0 0 15px var(--glow-color);
       position: sticky;
       top: 0;
       z-index: 1000;
-    }
-
-    .nav-left, .nav-right {
-      display: flex;
-      align-items: center;
       flex-wrap: wrap;
       gap: 10px;
     }
 
     nav a, .theme-toggle {
-      color: white;
+      margin: 5px 10px;
+      color: var(--glow-color);
       text-decoration: none;
       font-weight: 600;
       padding: 10px 16px;
-      background: rgba(255, 255, 255, 0.15);
-      border: none;
+      background: transparent;
+      border: 1px solid var(--glow-color);
       border-radius: 8px;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
     }
 
     nav a:hover, .theme-toggle:hover {
-      background: white;
-      color: #1d4ed8;
+      background: var(--glow-color);
+      color: #0f172a;
+      box-shadow: 0 0 10px var(--glow-color);
     }
 
     .theme-toggle {
@@ -105,18 +102,19 @@
       padding: 25px;
       margin: 20px 0;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 12px rgba(192,132,252,0.2);
       transition: transform 0.2s ease-in-out;
     }
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(192,132,252,0.4);
     }
 
     .card h2 {
       margin-top: 0;
       font-size: 1.5rem;
-      color: #1d4ed8;
+      color: var(--glow-color);
     }
 
     .card p {
@@ -125,17 +123,18 @@
     }
 
     .card a {
-      background: #2563eb;
-      color: white;
+      background: var(--glow-color);
+      color: #0f172a;
       padding: 10px 16px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
-      transition: background 0.3s;
+      transition: background 0.3s, box-shadow 0.3s;
     }
 
     .card a:hover {
-      background: #1e40af;
+      background: #9333ea;
+      box-shadow: 0 0 10px var(--glow-color);
     }
 
     .ad-container {
@@ -146,7 +145,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      color: #6b7280;
+      color: #a1a1aa;
       background-color: var(--footer-bg);
       margin-top: 40px;
     }
@@ -154,12 +153,6 @@
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: center;
-      }
-      .nav-left, .nav-right {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
       }
       nav a, .theme-toggle {
         width: 100%;
@@ -175,15 +168,11 @@
   </header>
 
   <nav>
-    <div class="nav-left">
-      <a href="index.html">🏠 Home</a>
-      <a href="about.html">📘 About</a>
-      <a href="contact.html">✉️ Contact</a>
-      <a href="privacy.html">🔒 Privacy</a>
-    </div>
-    <div class="nav-right">
-      <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
-    </div>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">📘 About</a>
+    <a href="contact.html">✉️ Contact</a>
+    <a href="privacy.html">🔒 Privacy</a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
   </nav>
 
   <div class="container">
@@ -237,6 +226,7 @@
     (function () {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
+      updateThemeColor(savedTheme);
     })();
 
     function toggleTheme() {
@@ -244,8 +234,15 @@
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
+      updateThemeColor(newTheme);
+    }
+
+    function updateThemeColor(theme) {
+      const metaTag = document.querySelector("meta[name='theme-color']");
+      if (metaTag) {
+        metaTag.setAttribute("content", theme === "dark" ? "#18082d" : "#f0f4f8");
+      }
     }
   </script>
 </body>
 </html>
-
