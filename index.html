@@ -53,39 +53,36 @@
 
     nav {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       background: linear-gradient(to right, #3b82f6, #1d4ed8);
-      padding: 14px 20px;
+      padding: 12px 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-bottom: 3px solid #2563eb;
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     nav a, .theme-toggle {
-      margin: 6px;
+      margin: 5px 10px;
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.15);
       border: none;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
     }
 
     nav a:hover, .theme-toggle:hover {
       background: white;
       color: #1d4ed8;
-      transform: scale(1.05);
     }
 
     .theme-toggle {
-      border: none;
       cursor: pointer;
     }
 
@@ -133,6 +130,11 @@
       background: #1e40af;
     }
 
+    .ad-container {
+      margin: 30px auto;
+      text-align: center;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -141,18 +143,14 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
       }
-
-      .card h2 {
-        font-size: 1.2rem;
-      }
-
-      .card p, .card a {
-        font-size: 0.95rem;
+      nav a, .theme-toggle {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -177,6 +175,20 @@
       <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
       <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
     </div>
+
+    <div class="ad-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4726937826985027" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4726937826985027"
+        data-ad-slot="4968563055"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
     <div class="card">
       <h2>📝 Grammarly</h2>
       <p>Fix grammar and polish your writing — perfect for school assignments.</p>
