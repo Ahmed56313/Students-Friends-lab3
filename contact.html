@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta name="google-adsense-account" content="ca-pub-4726937826985027">
+  <meta name="google-adsense-account" content="ca-pub-4726937826985027">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Ai Tools Hub</title>
+  <title>Contact – AI Tools Hub</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
     body {
@@ -15,16 +15,19 @@
       color: #1e293b;
       transition: background 0.3s, color 0.3s;
     }
+
     body.dark {
       background: #0f172a;
       color: #f1f5f9;
     }
+
     header {
       background-color: #1e3a8a;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -33,6 +36,7 @@
       padding: 10px 20px;
       flex-wrap: wrap;
     }
+
     .back-btn {
       background: #2563eb;
       color: white;
@@ -42,12 +46,15 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .back-btn:hover {
       background: #1d4ed8;
     }
+
     body.dark .back-btn {
       background: #1e40af;
     }
+
     .toggle {
       background: #1d4ed8;
       color: white;
@@ -57,18 +64,22 @@
       cursor: pointer;
       font-weight: bold;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
     }
+
     a.email {
       color: #2563eb;
       text-decoration: underline;
     }
+
     body.dark a.email {
       color: #93c5fd;
     }
+
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -94,8 +105,18 @@
 </div>
 
 <script>
+  // Apply the saved theme on page load
+  (function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+  })();
+
   function toggleMode() {
     document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 </script>
 
