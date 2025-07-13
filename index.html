@@ -55,18 +55,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       background: linear-gradient(to right, #3b82f6, #1d4ed8);
-      padding: 12px 20px;
+      padding: 14px 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid #2563eb;
       position: sticky;
       top: 0;
       z-index: 1000;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav a, .theme-toggle {
-      margin: 5px 10px;
       color: white;
       text-decoration: none;
       font-weight: 600;
@@ -146,7 +151,12 @@
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+      }
+      .nav-left, .nav-right {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
       }
       nav a, .theme-toggle {
         width: 100%;
@@ -162,11 +172,15 @@
   </header>
 
   <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html">📘 About</a>
-    <a href="contact.html">✉️ Contact</a>
-    <a href="privacy.html">🔒 Privacy</a>
-    <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+    <div class="nav-left">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">📘 About</a>
+      <a href="contact.html">✉️ Contact</a>
+      <a href="privacy.html">🔒 Privacy</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+    </div>
   </nav>
 
   <div class="container">
@@ -231,3 +245,4 @@
   </script>
 </body>
 </html>
+
