@@ -15,16 +15,19 @@
       color: #1e293b;
       transition: background 0.3s, color 0.3s;
     }
+
     body.dark {
       background: #0f172a;
       color: #f1f5f9;
     }
+
     header {
       background-color: #1e3a8a;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -33,6 +36,7 @@
       padding: 10px 20px;
       flex-wrap: wrap;
     }
+
     .back-btn {
       background: #2563eb;
       color: white;
@@ -42,12 +46,15 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .back-btn:hover {
       background: #1d4ed8;
     }
+
     body.dark .back-btn {
       background: #1e40af;
     }
+
     .toggle {
       background: #1d4ed8;
       color: white;
@@ -57,11 +64,13 @@
       cursor: pointer;
       font-weight: bold;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
     }
+
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -82,14 +91,24 @@
 </nav>
 
 <div class="container">
-  <p>We respect your privacy. Student's Friend does not collect, store or track any personal data.</p>
+  <p>We respect your privacy. AI Tools Hub does not collect, store or track any personal data.</p>
   <p>All external links provided (like ChatGPT, Grammarly, Notion AI) open their own platforms and are subject to their policies.</p>
   <p>If you have any concerns, feel free to email: <strong>meharahmed58458@gmail.com</strong></p>
 </div>
 
 <script>
+  // Apply saved theme on page load
+  (function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+  })();
+
   function toggleMode() {
     document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 </script>
 
