@@ -3,153 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A smart AI tool hub to help students and friends with studies, tasks, and advice. Created by Ahmed.">
+  <meta name="keywords" content="AI tools hub, student helper, AI study tool, friend helper, AI for friends, school help, homework AI">
+  <meta name="author" content="Ahmed">
   <meta name="theme-color" content="#f0f4f8">
-  <meta name="description" content="AI Tools Hub – smart tools to help students and creators with learning, productivity, and fun!">
-  <meta name="author" content="Ahmed (Gusso)">
+  <meta name="google-site-verification" content="v3TRLRHHOiYn2TFAX0CfGt6iv0_z6PQVd2wFFjL80tY" />
   <title>AI Tools Hub</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-color: #f9fafb;
-      --text-color: #1f2937;
-      --nav-bg: #ffffff;
-      --nav-hover-bg: #e0e7ff;
-      --nav-border: #4f46e5;
+      --bg-color: #f0f4f8;
+      --text-color: #1e293b;
+      --header-bg: #5b21b6;
+      --nav-bg: #4f46e5;
+      --nav-hover: #6366f1;
+      --nav-hover-text: #ffffff;
       --card-bg: #ffffff;
-      --card-shadow: rgba(0, 0, 0, 0.05);
-      --accent: #6366f1;
-      --footer-bg: #f1f5f9;
-      --glow: #a78bfa;
+      --footer-bg: #eef2ff;
+      --accent-color: #6366f1;
+      --glow-color: #a78bfa;
     }
 
     [data-theme="dark"] {
       --bg-color: #0f172a;
       --text-color: #e2e8f0;
-      --nav-bg: #1e293b;
-      --nav-hover-bg: #334155;
-      --nav-border: #818cf8;
+      --header-bg: #312e81;
+      --nav-bg: #1e3a8a;
+      --nav-hover: #3b82f6;
+      --nav-hover-text: #ffffff;
       --card-bg: #1e293b;
-      --card-shadow: rgba(255, 255, 255, 0.05);
-      --accent: #93c5fd;
       --footer-bg: #1e293b;
-      --glow: #93c5fd;
+      --accent-color: #93c5fd;
+      --glow-color: #93c5fd;
     }
 
     * {
       box-sizing: border-box;
-      transition: background 0.3s, color 0.3s;
     }
 
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .bg-effect {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+      animation: pulse 6s infinite ease-in-out;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    header, nav, .container, footer {
+      position: relative;
+      z-index: 1;
     }
 
     header {
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      background-color: var(--header-bg);
       color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 40px 20px;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin: 0 0 10px;
-    }
-
-    header p {
       margin: 0;
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background: var(--nav-bg);
-      border-bottom: 2px solid var(--nav-border);
-      padding: 12px 16px;
-      gap: 12px;
+      padding: 12px 20px;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 10;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 2px solid var(--accent-color);
     }
 
     nav a, .theme-toggle {
-      background: transparent;
-      color: var(--text-color);
-      padding: 10px 16px;
+      flex: 1 1 140px;
+      max-width: 200px;
+      text-align: center;
       text-decoration: none;
+      color: white;
+      padding: 10px 16px;
+      background: transparent;
+      border: 2px solid var(--accent-color);
+      border-radius: 6px;
       font-weight: 600;
-      border: 2px solid var(--nav-border);
-      border-radius: 8px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 0 8px var(--glow);
-      transition: 0.3s ease;
-      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 12px var(--glow-color);
+    }
+
+    nav a::before, .theme-toggle::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0%;
+      top: 0;
+      left: 0;
+      background: var(--accent-color);
+      z-index: -1;
+      transition: height 0.3s ease-in-out;
+    }
+
+    nav a:hover::before, .theme-toggle:hover::before {
+      height: 100%;
     }
 
     nav a:hover, .theme-toggle:hover {
-      background: var(--nav-hover-bg);
-      transform: scale(1.05);
+      color: var(--nav-hover-text);
     }
 
     nav a:active, .theme-toggle:active {
-      animation: lightning 0.3s ease-in-out;
+      animation: glow-press 0.3s ease-in-out;
     }
 
-    @keyframes lightning {
-      0% { box-shadow: 0 0 5px var(--glow); transform: scale(1); }
-      50% { box-shadow: 0 0 25px var(--glow); transform: scale(0.98); }
-      100% { box-shadow: 0 0 8px var(--glow); transform: scale(1); }
+    @keyframes glow-press {
+      0% { box-shadow: 0 0 8px var(--glow-color); transform: scale(1); }
+      50% { box-shadow: 0 0 24px var(--glow-color); transform: scale(0.95); }
+      100% { box-shadow: 0 0 12px var(--glow-color); transform: scale(1); }
+    }
+
+    .theme-toggle {
+      cursor: pointer;
     }
 
     .container {
+      padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
     }
 
     .card {
       background: var(--card-bg);
+      padding: 25px;
+      margin: 20px 0;
       border-radius: 12px;
-      box-shadow: 0 4px 12px var(--card-shadow);
-      padding: 24px;
-      margin-bottom: 24px;
-      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px var(--card-shadow);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .card h2 {
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-size: 1.4rem;
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--accent-color);
     }
 
     .card p {
-      margin: 0 0 16px;
+      font-size: 1rem;
+      margin-bottom: 15px;
     }
 
     .card a {
-      display: inline-block;
-      background: var(--accent);
+      background: var(--accent-color);
       color: white;
       padding: 10px 16px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
+      transition: background 0.3s;
     }
 
     .card a:hover {
-      background: var(--nav-border);
+      background: var(--nav-hover);
     }
 
     .ad-container {
@@ -158,26 +228,31 @@
     }
 
     footer {
-      background: var(--footer-bg);
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
       color: #6b7280;
+      background-color: var(--footer-bg);
       margin-top: 40px;
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
       nav a, .theme-toggle {
         width: 100%;
-        text-align: center;
+        flex: none;
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
+  <div class="bg-effect"></div>
+
   <header>
-    <h1>🚀 AI Tools Hub – Smart Tools for Learners & Creators</h1>
-    <p>Free, useful, and powerful tools powered by AI for everyone.</p>
+    <h1>🚀 AI Tools Hub – Tools for Learners & Creators</h1>
+    <p>Smart, free & helpful tools for everyone. Learn and build faster with AI!</p>
   </header>
 
   <nav>
@@ -191,48 +266,41 @@
   <div class="container">
     <div class="card">
       <h2>🔍 ChatGPT</h2>
-      <p>Ask questions, generate ideas, or get help with anything using ChatGPT.</p>
+      <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
       <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
+    </div>
+
+    <div class="ad-container">
+      <!-- Your AdSense Code -->
     </div>
 
     <div class="card">
       <h2>📝 Grammarly</h2>
-      <p>Fix grammar and polish your writing. Ideal for assignments and emails.</p>
+      <p>Fix grammar and polish your writing — perfect for school assignments.</p>
       <a href="https://www.grammarly.com" target="_blank">Try Grammarly</a>
     </div>
 
     <div class="card">
       <h2>🔁 Quillbot</h2>
-      <p>Paraphrase or summarize text in seconds — stay clear and original.</p>
+      <p>Paraphrase your content easily with Quillbot — stay original and clear.</p>
       <a href="https://www.quillbot.com" target="_blank">Use Quillbot</a>
     </div>
 
     <div class="card">
       <h2>🧐 Notion AI</h2>
-      <p>Plan, write, and organize smarter with Notion AI tools.</p>
+      <p>Organize notes, manage tasks, and use AI for creative writing.</p>
       <a href="https://www.notion.so/product/ai" target="_blank">Explore Notion AI</a>
     </div>
 
     <div class="card">
       <h2>🎨 Remove.bg</h2>
-      <p>Remove image backgrounds easily — great for projects, thumbnails, and edits.</p>
+      <p>Remove image backgrounds in one click — useful for projects and thumbnails.</p>
       <a href="https://www.remove.bg" target="_blank">Try Remove.bg</a>
-    </div>
-
-    <div class="ad-container">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4726937826985027" crossorigin="anonymous"></script>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4726937826985027"
-           data-ad-slot="4968563055"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   </div>
 
   <footer>
-    <p>📍 Based in Chaprar, Sialkot | Made with ❤️ by Gusso</p>
+    <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
     <p>© 2025 AI Tools Hub</p>
   </footer>
 
@@ -240,7 +308,7 @@
     (function () {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
-      document.querySelector("meta[name='theme-color']").setAttribute("content", savedTheme === "dark" ? "#0f172a" : "#f0f4f8");
+      updateThemeColor(savedTheme);
     })();
 
     function toggleTheme() {
@@ -248,9 +316,15 @@
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
-      document.querySelector("meta[name='theme-color']").setAttribute("content", newTheme === "dark" ? "#0f172a" : "#f0f4f8");
+      updateThemeColor(newTheme);
+    }
+
+    function updateThemeColor(theme) {
+      const metaTag = document.querySelector("meta[name='theme-color']");
+      if (metaTag) {
+        metaTag.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
+      }
     }
   </script>
 </body>
 </html>
-
