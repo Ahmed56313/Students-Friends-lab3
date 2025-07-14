@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,51 +193,45 @@
   </style>
 </head>
 <body>
+
+  <!-- ✅ Added this content inside your body to make it show up -->
   <header>
-    <h1>Welcome to AI Tools Hub</h1>
-    <p>Helping students and friends with studies, tasks, and advice.</p>
+    <h1>AI Tools Hub</h1>
+    <p>A smart hub by Ahmed to help students and friends.</p>
   </header>
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Tools</a>
-    <a href="#">Contact</a>
+    <a href="#">Study Tools</a>
+    <a href="#">Friend Zone</a>
     <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
   </nav>
 
   <div class="container">
     <div class="card">
-      <h2>AI Study Assistant</h2>
-      <p>Struggling with homework? Let AI help you understand and complete your tasks smarter and faster!</p>
-      <a href="#">Get Started</a>
+      <h2>Study Assistant</h2>
+      <p>Get help with homework, notes, summaries, and learning tasks using smart AI tools.</p>
+      <a href="#">Try It</a>
     </div>
-
     <div class="card">
-      <h2>Creative Tool Zone</h2>
-      <p>Create poems, stories, jokes, birthday wishes and more for you and your friends using AI!</p>
-      <a href="#">Explore Now</a>
-    </div>
-
-    <div class="card">
-      <h2>Exam Preparation</h2>
-      <p>Practice questions, quizzes and study guides powered by AI to help you ace your school tests.</p>
-      <a href="#">Try Quiz Tools</a>
+      <h2>Friend Support</h2>
+      <p>Create jokes, wishes, and fun content for your friends using AI-powered magic.</p>
+      <a href="#">Make Fun Stuff</a>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Ahmed's AI Tools Hub. All rights reserved.
+    &copy; 2025 Ahmed | AI Tools Hub
   </footer>
 
   <script>
     function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const currentTheme = document.documentElement.getAttribute("data-theme");
       document.documentElement.setAttribute(
-        'data-theme',
-        currentTheme === 'dark' ? 'light' : 'dark'
+        "data-theme",
+        currentTheme === "dark" ? "light" : "dark"
       );
     }
   </script>
 </body>
 </html>
-
