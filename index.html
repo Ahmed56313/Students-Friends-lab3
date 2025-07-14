@@ -192,6 +192,51 @@
   </style>
 </head>
 <body>
- 
+  <header>
+    <h1>Welcome to AI Tools Hub</h1>
+    <p>Helping students and friends with studies, tasks, and advice.</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Tools</a>
+    <a href="#">Contact</a>
+    <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>AI Study Assistant</h2>
+      <p>Struggling with homework? Let AI help you understand and complete your tasks smarter and faster!</p>
+      <a href="#">Get Started</a>
+    </div>
+
+    <div class="card">
+      <h2>Creative Tool Zone</h2>
+      <p>Create poems, stories, jokes, birthday wishes and more for you and your friends using AI!</p>
+      <a href="#">Explore Now</a>
+    </div>
+
+    <div class="card">
+      <h2>Exam Preparation</h2>
+      <p>Practice questions, quizzes and study guides powered by AI to help you ace your school tests.</p>
+      <a href="#">Try Quiz Tools</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Ahmed's AI Tools Hub. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute(
+        'data-theme',
+        currentTheme === 'dark' ? 'light' : 'dark'
+      );
+    }
+  </script>
 </body>
 </html>
+
