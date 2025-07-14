@@ -38,12 +38,24 @@
     &copy; 2025 AI Tools Hubx. All rights reserved.
   </footer>
 
-  <script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+ <script>
+
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
     }
-  </script>
+  };
+
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  }
+</script>
+
 </body>
 </html>
 
