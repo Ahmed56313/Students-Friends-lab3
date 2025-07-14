@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Contact AI Tools Hub – Reach out to us for help or suggestions.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – AI Tools Hub</title>
+  <meta name="description" content="Get in touch with the creator of AI Tools Hub. Suggestions and questions are always welcome!" />
+  <title>Contact - AI Tools Hub</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f0f4f8;
@@ -14,135 +14,181 @@
       --header-bg: #5b21b6;
       --nav-bg: #4f46e5;
       --nav-hover: #6366f1;
+      --nav-hover-text: #ffffff;
       --card-bg: #ffffff;
       --footer-bg: #eef2ff;
       --accent-color: #6366f1;
     }
+
     [data-theme="dark"] {
       --bg-color: #0f172a;
       --text-color: #e2e8f0;
       --header-bg: #312e81;
       --nav-bg: #1e3a8a;
       --nav-hover: #3b82f6;
+      --nav-hover-text: #0f172a;
       --card-bg: #1e293b;
       --footer-bg: #1e293b;
       --accent-color: #93c5fd;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
     }
+
     header {
       background-color: var(--header-bg);
       color: white;
       padding: 30px 20px;
       text-align: center;
     }
+
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      align-items: center;
       background: var(--nav-bg);
       padding: 12px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
+      gap: 10px;
       border-bottom: 2px solid var(--accent-color);
     }
+
     nav a, .theme-toggle {
+      margin: 5px;
       color: white;
       text-decoration: none;
       font-weight: 600;
       padding: 10px 16px;
-      background: transparent;
       border: 2px solid var(--accent-color);
       border-radius: 6px;
+      background: transparent;
       transition: all 0.3s ease-in-out;
       position: relative;
       overflow: hidden;
     }
-    nav a::before, .theme-toggle::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 0%;
-      top: 0;
-      left: 0;
-      background: var(--accent-color);
-      z-index: -1;
-      transition: all 0.3s ease-in-out;
-    }
-    nav a:hover::before, .theme-toggle:hover::before {
-      height: 100%;
-    }
+
     nav a:hover, .theme-toggle:hover {
-      color: white;
+      background: var(--nav-hover);
+      color: var(--nav-hover-text);
     }
+
     .theme-toggle {
       cursor: pointer;
     }
+
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 30px 20px;
     }
+
     .card {
       background: var(--card-bg);
       padding: 25px;
-      margin: 20px 0;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+
+    .card p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .contact-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-left: 4px solid var(--accent-color);
+      background: #f9fafb;
+      border-radius: 8px;
+    }
+
     footer {
+      background: var(--footer-bg);
       text-align: center;
       padding: 20px;
       color: #6b7280;
-      background-color: var(--footer-bg);
       margin-top: 40px;
     }
-    a.email {
-      color: var(--accent-color);
-      text-decoration: underline;
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a, .theme-toggle {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>✉️ Contact Us</h1>
-    <p>Reach out for questions, support, or collaboration ideas!</p>
+    <p>We'd love to hear from you!</p>
   </header>
+
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="about.html">📘 About</a>
+    <a href="contact.html">✉️ Contact</a>
     <a href="privacy.html">🔒 Privacy</a>
     <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
   </nav>
+
   <div class="container">
     <div class="card">
-      <p><strong>Email:</strong> <a href="mailto:meharahmed58458@gmail.com" class="email">meharahmed58458@gmail.com</a></p>
-      <p>We'd love to hear from you! Suggestions, feedback, or just say hello.</p>
+      <h2>Let's Connect!</h2>
+      <p>If you have suggestions, ideas, or just want to say hello, feel free to reach out to us.</p>
+
+      <div class="contact-box">
+        <p><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      </div>
     </div>
   </div>
+
   <footer>
-    <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso</p>
+    <p>📍 Based in Sialkot, Punjab, Pakistan | Created by Gusso</p>
     <p>© 2025 AI Tools Hub</p>
   </footer>
+
   <script>
     (function () {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
+      updateThemeColor(savedTheme);
     })();
+
     function toggleTheme() {
       const currentTheme = document.documentElement.getAttribute("data-theme");
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
+      updateThemeColor(newTheme);
+    }
+
+    function updateThemeColor(theme) {
+      const meta = document.querySelector("meta[name='theme-color']");
+      if (meta) {
+        meta.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
+      }
     }
   </script>
 </body>
 </html>
+
 
