@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About AI Tools Hub - Learn about the mission and creator behind this smart helper site." />
+  <meta name="description" content="About AI Tools Hub - Created by Ahmed (Gusso)">
+  <meta name="author" content="Ahmed">
+  <meta name="theme-color" content="#f0f4f8">
   <title>About - AI Tools Hub</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
@@ -35,6 +37,7 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
+      padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
     }
@@ -44,6 +47,11 @@
       color: white;
       padding: 30px 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
     }
 
     nav {
@@ -57,26 +65,42 @@
       z-index: 1000;
       flex-wrap: wrap;
       gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       border-bottom: 2px solid var(--accent-color);
     }
 
     nav a, .theme-toggle {
-      margin: 5px;
+      margin: 5px 10px;
       color: white;
       text-decoration: none;
       font-weight: 600;
       padding: 10px 16px;
+      background: transparent;
       border: 2px solid var(--accent-color);
       border-radius: 6px;
-      background: transparent;
       transition: all 0.3s ease-in-out;
       position: relative;
       overflow: hidden;
     }
 
+    nav a::before, .theme-toggle::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0%;
+      top: 0;
+      left: 0;
+      background: var(--accent-color);
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover::before, .theme-toggle:hover::before {
+      height: 100%;
+    }
+
     nav a:hover, .theme-toggle:hover {
-      background: var(--nav-hover);
-      color: var(--nav-hover-text);
+      color: white;
     }
 
     .theme-toggle {
@@ -84,14 +108,15 @@
     }
 
     .container {
+      padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
     }
 
     .card {
       background: var(--card-bg);
       padding: 25px;
+      margin: 20px 0;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s ease-in-out;
@@ -99,18 +124,25 @@
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .card h2 {
-      color: var(--accent-color);
       margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     footer {
-      background: var(--footer-bg);
       text-align: center;
       padding: 20px;
       color: #6b7280;
+      background-color: var(--footer-bg);
       margin-top: 40px;
     }
 
@@ -128,7 +160,7 @@
 <body>
   <header>
     <h1>📘 About AI Tools Hub</h1>
-    <p>Who we are and why we built this!</p>
+    <p>Learn more about the mission and creator behind the platform.</p>
   </header>
 
   <nav>
@@ -141,21 +173,30 @@
 
   <div class="container">
     <div class="card">
-      <h2>About This Site</h2>
-      <p>AI Tools Hub is a free online tool site designed to help students, creators, and curious minds by gathering powerful and smart AI tools in one place.</p>
-      <p>Whether you need writing help, homework assistance, or content creation support — we got you covered!</p>
+      <h2>👨‍💻 Created by Ahmed Mustafa</h2>
+      <p>
+        This website was made to help students and friends by giving them easy access to useful AI tools. Whether you're working on school projects, looking for grammar correction, or need help writing something creative — this hub connects you with powerful tools like ChatGPT, Grammarly, Quillbot, and more.
+      </p>
+      <p>
+        It's completely free, made with care, and designed to be super simple and fast. It's also responsive, meaning it works on your phone and computer smoothly!
+      </p>
+    </div>
 
-      <h2>👨‍💻 Created by</h2>
-      <p><strong>Ahmed (Gusso)</strong> — a programmer, cricketer, and tech enthusiast from Sialkot, Pakistan. This project is built with love and care for the digital world and learners everywhere.</p>
+    <div class="card">
+      <h2>💡 Our Mission</h2>
+      <p>
+        To make artificial intelligence tools easily accessible to students, learners, and creators everywhere — especially in regions where tech access is limited.
+      </p>
+    </div>
 
-      <h2>🎯 Our Mission</h2>
-      <p>To make helpful AI tools accessible, easy to use, and available to everyone — students, friends, and creators.</p>
+    <div class="card">
+      <h2>🌍 Based In</h2>
+      <p>📍 Chaprar, Sialkot, Punjab, Pakistan</p>
     </div>
   </div>
 
   <footer>
-    <p>📍 Based in Sialkot, Punjab, Pakistan | Created by Gusso</p>
-    <p>© 2025 AI Tools Hub</p>
+    <p>© 2025 AI Tools Hub | Made by ❤️ respected sir "Ahmed Mustafa"</p>
   </footer>
 
   <script>
@@ -174,11 +215,12 @@
     }
 
     function updateThemeColor(theme) {
-      const meta = document.querySelector("meta[name='theme-color']");
-      if (meta) {
-        meta.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
+      const metaTag = document.querySelector("meta[name='theme-color']");
+      if (metaTag) {
+        metaTag.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
       }
     }
   </script>
 </body>
 </html>
+
