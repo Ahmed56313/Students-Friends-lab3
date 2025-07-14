@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f0f4f8">
-  <meta name="description" content="Privacy Policy for AI Tools Hub by Ahmed">
-  <title>Privacy Policy | AI Tools Hub</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+  <meta name="description" content="Privacy policy of AI Tools Hub. Learn how your data is protected and used on our site.">
+  <title>Privacy Policy - AI Tools Hub</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f0f4f8;
       --text-color: #1e293b;
-      --header-bg: #4c1d95;
+      --header-bg: #5b21b6;
       --nav-bg: #4f46e5;
       --nav-hover: #6366f1;
       --nav-hover-text: #ffffff;
@@ -37,7 +35,6 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
     }
@@ -55,21 +52,26 @@
       align-items: center;
       background: var(--nav-bg);
       padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       flex-wrap: wrap;
       gap: 10px;
+      border-bottom: 2px solid var(--accent-color);
     }
 
     nav a, .theme-toggle {
-      margin: 5px 10px;
+      margin: 5px;
       color: white;
       text-decoration: none;
       font-weight: 600;
       padding: 10px 16px;
-      background: transparent;
       border: 2px solid var(--accent-color);
       border-radius: 6px;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
     }
 
     nav a:hover, .theme-toggle:hover {
@@ -77,28 +79,39 @@
       color: var(--nav-hover-text);
     }
 
+    .theme-toggle {
+      cursor: pointer;
+    }
+
     .container {
-      padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
+      padding: 30px 20px;
     }
 
-    h1 {
+    .card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
       color: var(--accent-color);
-      text-align: center;
-      margin-bottom: 30px;
     }
 
-    p {
+    .card p {
+      margin-bottom: 15px;
+      font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
 
     footer {
+      background: var(--footer-bg);
       text-align: center;
       padding: 20px;
       color: #6b7280;
-      background-color: var(--footer-bg);
       margin-top: 40px;
     }
 
@@ -117,7 +130,7 @@
 <body>
   <header>
     <h1>🔒 Privacy Policy</h1>
-    <p>We value your privacy at AI Tools Hub</p>
+    <p>We respect your privacy and protect your data.</p>
   </header>
 
   <nav>
@@ -129,23 +142,26 @@
   </nav>
 
   <div class="container">
-    <h1>Privacy Policy</h1>
+    <div class="card">
+      <h2>What Data We Collect</h2>
+      <p>We do not collect any personal data directly. Our site contains links to third-party tools (like ChatGPT, Grammarly, etc.), and they may have their own data policies.</p>
 
-    <p><strong>Last updated:</strong> July 2025</p>
+      <h2>Third-Party Services</h2>
+      <p>This website uses tools like Google AdSense for ads. These services may use cookies to personalize content and ads based on your activity.</p>
 
-    <p>AI Tools Hub does not collect any personal data from users. Our goal is to help students, creators, and learners access AI tools easily and safely without compromising their privacy.</p>
+      <h2>Your Choices</h2>
+      <p>You can choose to block cookies via your browser settings. You are not required to sign up or enter personal data to use this site.</p>
 
-    <p>Some tools linked from this website (like ChatGPT, Grammarly, Notion, etc.) may collect information as per their own privacy policies. We recommend reviewing their individual policies before using them.</p>
+      <h2>Changes to This Policy</h2>
+      <p>This policy may be updated in the future. We'll notify users on this page when that happens.</p>
 
-    <p>We may use Google AdSense to display ads. Google may use cookies to serve ads based on your visits. You can opt-out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google Ad Settings</a>.</p>
-
-    <p><strong>Security:</strong> We don’t store any user data or use any forms that collect your personal information.</p>
-
-    <p>If you have questions or concerns about privacy, feel free to contact us using the contact page.</p>
+      <h2>Contact</h2>
+      <p>If you have any questions about this policy, please <a href="contact.html">contact us here</a>.</p>
+    </div>
   </div>
 
   <footer>
-    <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
+    <p>📍 Based in Sialkot, Punjab, Pakistan | Made by Gusso</p>
     <p>© 2025 AI Tools Hub</p>
   </footer>
 
@@ -153,6 +169,7 @@
     (function () {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
+      updateThemeColor(savedTheme);
     })();
 
     function toggleTheme() {
@@ -160,8 +177,18 @@
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
+      updateThemeColor(newTheme);
+    }
+
+    function updateThemeColor(theme) {
+      const meta = document.querySelector("meta[name='theme-color']");
+      if (meta) {
+        meta.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
+      }
     }
   </script>
 </body>
 </html>
+
+
 
