@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -12,10 +14,6 @@
       --glow: #6a00ff;
       --error-bg: #ff4c4c;
       --error-text: white;
-    }
-
-    [data-theme="dark"] {
-      --bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     }
 
     [data-theme="light"] {
@@ -48,7 +46,7 @@
       box-shadow: 0 0 20px var(--glow);
       width: 90%;
       max-width: 400px;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 0.8s ease;
     }
 
     h2 {
@@ -128,38 +126,18 @@
     <input type="email" id="email" placeholder="Email" />
     <input type="password" id="password" placeholder="Password" />
     <button id="authBtn">Login</button>
-    <button id="googleBtn">Sign in with Google</button>
     <div class="switch">
       <span id="switchMode">Don't have an account? Sign Up</span>
     </div>
   </div>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-
   <script>
-    // ✅ Your New Firebase Config (2025 project)
-    const firebaseConfig = {
-      apiKey: "AIzaSyALjKGw6UGJpo1aY7ewIatrt6bEWi9gjAQ",
-      authDomain: "ai-tools-hubx-a261e.firebaseapp.com",
-      projectId: "ai-tools-hubx-a261e",
-      storageBucket: "ai-tools-hubx-a261e.firebasestorage.app",
-      messagingSenderId: "205348109265",
-      appId: "1:205348109265:web:310c182f57097295f2bef0",
-      measurementId: "G-75VVX6CPBH"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
     const emailEl = document.getElementById("email");
     const passEl = document.getElementById("password");
     const btn = document.getElementById("authBtn");
     const switcher = document.getElementById("switchMode");
     const title = document.getElementById("formTitle");
     const errorBox = document.getElementById("errorBox");
-    const googleBtn = document.getElementById("googleBtn");
 
     let isLogin = true;
 
@@ -174,19 +152,19 @@
     btn.onclick = () => {
       const email = emailEl.value.trim();
       const pass = passEl.value.trim();
-      if (!email || !pass) return showError("Email and password are required.");
 
-      const action = isLogin ? auth.signInWithEmailAndPassword : auth.createUserWithEmailAndPassword;
-      action(email, pass)
-        .then(() => window.location.href = "index.html")
-        .catch(err => showError(err.message));
-    };
+      if (!email || !pass) return showError("Please fill in both email and password.");
 
-    googleBtn.onclick = () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider)
-        .then(() => window.location.href = "index.html")
-        .catch(err => showError(err.message));
+      if (!email.includes("@") || pass.length < 4) {
+        return showError("Invalid email or password (min 4 characters).");
+      }
+
+      // Simulate login/signup success
+      errorBox.style.display = "none";
+      btn.innerText = "Loading...";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
     };
 
     function showError(msg) {
@@ -208,4 +186,3 @@
   </script>
 </body>
 </html>
-
