@@ -139,15 +139,15 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
 
   <script>
-    // ✅ Your Firebase project config (fully working)
+    // ✅ Your New Firebase Config (2025 project)
     const firebaseConfig = {
-      apiKey: "AIzaSyDS4vfmRx57tRrmyNVU0DvoukI3cd06--8",
-      authDomain: "ai-tools-hubx.firebaseapp.com",
-      projectId: "ai-tools-hubx",
-      storageBucket: "ai-tools-hubx.firebasestorage.app",
-      messagingSenderId: "789322498896",
-      appId: "1:789322498896:web:79ddfeb83a328a04cd6255",
-      measurementId: "G-W1BE3HZ9TC"
+      apiKey: "AIzaSyALjKGw6UGJpo1aY7ewIatrt6bEWi9gjAQ",
+      authDomain: "ai-tools-hubx-a261e.firebaseapp.com",
+      projectId: "ai-tools-hubx-a261e",
+      storageBucket: "ai-tools-hubx-a261e.firebasestorage.app",
+      messagingSenderId: "205348109265",
+      appId: "1:205348109265:web:310c182f57097295f2bef0",
+      measurementId: "G-75VVX6CPBH"
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -201,7 +201,6 @@
       localStorage.setItem("theme", newTheme);
     }
 
-    // Load saved theme
     (function () {
       const saved = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", saved);
