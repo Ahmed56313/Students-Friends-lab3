@@ -271,7 +271,7 @@
     </div>
 
     <div class="ad-container">
-      <!-- Your AdSense Code -->
+ 
     </div>
 
     <div class="card">
@@ -303,6 +303,27 @@
     <p>📍 Based in Chaprar, Sialkot, Punjab, Pakistan | Made by Gusso | 100% Legal & Safe</p>
     <p>© 2025 AI Tools Hub</p>
   </footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      window.location.href = "login.html";
+    }
+  });
+</script>
 
   <script>
     (function () {
