@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="logo.png">
+
+  
   <meta charset="UTF-8" />
   <title>About - AI Tools Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,38 +25,13 @@
       color: #f1f1f1;
     }
 
-    .theme-button {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 6px;
-      background-color: #fff;
-      color: #007bff;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-      transition: background 0.3s ease;
-    }
-
-    body.dark .theme-button {
-      background-color: #2a2a2a;
-      color: #f1f1f1;
-    }
-
-    .theme-button:hover {
-      opacity: 0.9;
-    }
-
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background-color: #007bff;
       padding: 15px 20px;
-      position: relative;
-      z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .navbar .logo {
@@ -62,10 +40,17 @@
       color: white;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     .nav-links {
       display: flex;
       list-style: none;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .nav-links li a {
@@ -76,6 +61,26 @@
 
     .nav-links li a.active {
       text-decoration: underline;
+    }
+
+    .theme-button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #007bff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    body.dark .theme-button {
+      background-color: #2a2a2a;
+      color: #f1f1f1;
+    }
+
+    .theme-button:hover {
+      opacity: 0.9;
     }
 
     .hamburger {
@@ -90,27 +95,37 @@
     }
 
     @media screen and (max-width: 768px) {
-      .nav-links {
+      .nav-right {
         flex-direction: column;
+        align-items: flex-start;
         background-color: #007bff;
-        position: absolute;
-        top: 60px;
-        right: 0;
         width: 100%;
         display: none;
-        padding: 20px 0;
+        margin-top: 15px;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
       }
 
       .nav-links li {
+        width: 100%;
         text-align: center;
-        padding: 10px 0;
+      }
+
+      .theme-button {
+        width: 90%;
+        margin: 10px auto;
       }
 
       .hamburger {
         display: block;
       }
 
-      #menu-toggle:checked + .hamburger + .nav-links {
+      #menu-toggle:checked + .hamburger + .nav-right {
         display: flex;
       }
     }
@@ -140,25 +155,26 @@
   </style>
 </head>
 <body>
-  <!-- Toggle Theme Button -->
-  <button class="theme-button" id="toggleThemeBtn">Toggle Theme</button>
 
-  <!-- Navbar -->
+
   <header>
     <nav class="navbar">
       <div class="logo">AI Tools Hub</div>
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="hamburger">&#9776;</label>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-      </ul>
+      
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        <button class="theme-button" id="toggleThemeBtn">Toggle Theme</button>
+      </div>
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main class="page-content">
     <h1>About AI Tools Hub</h1>
     <p>
@@ -166,7 +182,6 @@
     </p>
   </main>
 
-  <!-- Script -->
   <script>
     const toggleBtn = document.getElementById('toggleThemeBtn');
 
@@ -189,6 +204,7 @@
       applyTheme(savedTheme);
     };
   </script>
+
 </body>
 </html>
 
