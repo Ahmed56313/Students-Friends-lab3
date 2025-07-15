@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - AI Tools Hub</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
 
@@ -25,15 +22,30 @@
       color: #f1f1f1;
     }
 
-    .theme-toggle {
+    .theme-button {
       position: absolute;
       top: 15px;
       right: 20px;
-      font-size: 18px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #007bff;
+      font-weight: bold;
+      cursor: pointer;
       z-index: 1001;
+      transition: background 0.3s ease;
     }
 
-    /* Navbar Styles */
+    body.dark .theme-button {
+      background-color: #2a2a2a;
+      color: #f1f1f1;
+    }
+
+    .theme-button:hover {
+      opacity: 0.9;
+    }
+
     .navbar {
       display: flex;
       align-items: center;
@@ -128,12 +140,8 @@
   </style>
 </head>
 <body>
-  <!-- Dark Mode Toggle -->
-  <div class="theme-toggle">
-    <label>
-      🌙 <input type="checkbox" id="darkModeToggle"> ☀️
-    </label>
-  </div>
+  <!-- Toggle Theme Button -->
+  <button class="theme-button" id="toggleThemeBtn">Toggle Theme</button>
 
   <!-- Navbar -->
   <header>
@@ -158,22 +166,28 @@
     </p>
   </main>
 
+  <!-- Script -->
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.checked = localStorage.getItem('theme') === 'dark';
+    const toggleBtn = document.getElementById('toggleThemeBtn');
 
-    function applyTheme() {
-      if (toggle.checked) {
+    function applyTheme(theme) {
+      if (theme === 'dark') {
         document.body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
       } else {
         document.body.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
       }
+      localStorage.setItem('theme', theme);
     }
 
-    toggle.addEventListener('change', applyTheme);
-    window.onload = applyTheme;
+    toggleBtn.addEventListener('click', () => {
+      const current = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(current);
+    });
+
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      applyTheme(savedTheme);
+    };
   </script>
 </body>
 </html>
