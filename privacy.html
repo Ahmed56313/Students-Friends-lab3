@@ -2,193 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy policy of AI Tools Hub. Learn how your data is protected and used on our site.">
   <title>Privacy Policy - AI Tools Hub</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f0f4f8;
-      --text-color: #1e293b;
-      --header-bg: #5b21b6;
-      --nav-bg: #4f46e5;
-      --nav-hover: #6366f1;
-      --nav-hover-text: #ffffff;
-      --card-bg: #ffffff;
-      --footer-bg: #eef2ff;
-      --accent-color: #6366f1;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
 
-    [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #e2e8f0;
-      --header-bg: #312e81;
-      --nav-bg: #1e3a8a;
-      --nav-hover: #3b82f6;
-      --nav-hover-text: #0f172a;
-      --card-bg: #1e293b;
-      --footer-bg: #1e293b;
-      --accent-color: #93c5fd;
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+      min-height: 100vh;
     }
 
-    header {
-      background-color: var(--header-bg);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+    body.dark {
+      background: #121212;
+      color: #f1f1f1;
     }
 
-    nav {
+    .navbar {
       display: flex;
-      justify-content: center;
       align-items: center;
-      background: var(--nav-bg);
-      padding: 12px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      justify-content: space-between;
+      background-color: #007bff;
+      padding: 15px 20px;
       flex-wrap: wrap;
-      gap: 10px;
-      border-bottom: 2px solid var(--accent-color);
     }
 
-    nav a, .theme-toggle {
-      margin: 5px;
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      padding: 10px 16px;
-      border: 2px solid var(--accent-color);
+      font-weight: 500;
+    }
+
+    .nav-links li a.active {
+      text-decoration: underline;
+    }
+
+    .theme-button {
+      padding: 8px 12px;
+      border: none;
       border-radius: 6px;
-      background: transparent;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      overflow: hidden;
-    }
-
-    nav a:hover, .theme-toggle:hover {
-      background: var(--nav-hover);
-      color: var(--nav-hover-text);
-    }
-
-    .theme-toggle {
+      background-color: #fff;
+      color: #007bff;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
+    body.dark .theme-button {
+      background-color: #2a2a2a;
+      color: #f1f1f1;
     }
 
-    .card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .theme-button:hover {
+      opacity: 0.9;
     }
 
-    .card h2 {
-      margin-top: 0;
-      color: var(--accent-color);
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
     }
 
-    .card p {
-      margin-bottom: 15px;
-      font-size: 1rem;
-      line-height: 1.6;
+    #menu-toggle {
+      display: none;
     }
 
-    footer {
-      background: var(--footer-bg);
-      text-align: center;
-      padding: 20px;
-      color: #6b7280;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
+    @media screen and (max-width: 768px) {
+      .nav-right {
         flex-direction: column;
+        align-items: flex-start;
+        background-color: #007bff;
+        width: 100%;
+        display: none;
+        margin-top: 15px;
+        padding: 10px 0;
       }
 
-      nav a, .theme-toggle {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .nav-links li {
         width: 100%;
         text-align: center;
       }
+
+      .theme-button {
+        width: 90%;
+        margin: 10px auto;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      #menu-toggle:checked + .hamburger + .nav-right {
+        display: flex;
+      }
+    }
+
+    .page-content {
+      max-width: 800px;
+      margin: 100px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark .page-content {
+      background: #1e1e1e;
+    }
+
+    .page-content h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .page-content p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <header>
-    <h1>🔒 Privacy Policy</h1>
-    <p>We respect your privacy and protect your data.</p>
+    <nav class="navbar">
+      <div class="logo">AI Tools Hub</div>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html" class="active">Privacy</a></li>
+        </ul>
+        <button class="theme-button" id="toggleThemeBtn">Toggle Theme</button>
+      </div>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html">📘 About</a>
-    <a href="contact.html">✉️ Contact</a>
-    <a href="privacy.html">🔒 Privacy</a>
-    <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
-  </nav>
+  <!-- Main Content -->
+  <main class="page-content">
+    <h1>Privacy Policy</h1>
+    <p>
+      At AI Tools Hub, we value your privacy and are committed to protecting your personal data. This privacy policy outlines how we collect, use, and safeguard your information.
+    </p>
+    <p>
+      We do not share your personal details with third-party services. Any data you provide via contact forms or feedback is used solely for improving our services and responding to your inquiries.
+    </p>
+    <p>
+      We use cookies to enhance your experience. You can disable them in your browser settings if you prefer not to use them.
+    </p>
+    <p>
+      By using AI Tools Hub, you agree to the terms of this privacy policy. We may update it occasionally, and all changes will be posted on this page.
+    </p>
+    <p>
+      If you have any questions, feel free to reach out to us on the <a href="contact.html" style="color:#007bff; text-decoration:underline;">Contact</a> page.
+    </p>
+  </main>
 
-  <div class="container">
-    <div class="card">
-      <h2>What Data We Collect</h2>
-      <p>We do not collect any personal data directly. Our site contains links to third-party tools (like ChatGPT, Grammarly, etc.), and they may have their own data policies.</p>
-
-      <h2>Third-Party Services</h2>
-      <p>This website uses tools like Google AdSense for ads. These services may use cookies to personalize content and ads based on your activity.</p>
-
-      <h2>Your Choices</h2>
-      <p>You can choose to block cookies via your browser settings. You are not required to sign up or enter personal data to use this site.</p>
-
-      <h2>Changes to This Policy</h2>
-      <p>This policy may be updated in the future. We'll notify users on this page when that happens.</p>
-
-      <h2>Contact</h2>
-      <p>If you have any questions about this policy, please <a href="contact.html">contact us here</a>.</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>📍 Based in Sialkot, Punjab, Pakistan | Made by Gusso</p>
-    <p>© 2025 AI Tools Hub</p>
-  </footer>
-
+  <!-- Script -->
   <script>
-    (function () {
-      const savedTheme = localStorage.getItem("theme") || "light";
-      document.documentElement.setAttribute("data-theme", savedTheme);
-      updateThemeColor(savedTheme);
-    })();
+    const toggleBtn = document.getElementById('toggleThemeBtn');
 
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
-      updateThemeColor(newTheme);
-    }
-
-    function updateThemeColor(theme) {
-      const meta = document.querySelector("meta[name='theme-color']");
-      if (meta) {
-        meta.setAttribute("content", theme === "dark" ? "#0f172a" : "#f0f4f8");
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
       }
+      localStorage.setItem('theme', theme);
     }
+
+    toggleBtn.addEventListener('click', () => {
+      const current = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(current);
+    });
+
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      applyTheme(savedTheme);
+    };
   </script>
+
 </body>
 </html>
+
 
 
 
