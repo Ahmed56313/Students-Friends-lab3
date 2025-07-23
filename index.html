@@ -1,8 +1,9 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="157446" async data-cfasync="false"></script>
-
+  <!-- Removed duplicate ad script from <head> -->
   <meta name="monetag" content="1391910167d5e226fcd1ee3256e14f31">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +14,11 @@
   <meta name="google-site-verification" content="v3TRLRHHOiYn2TFAX0CfGt6iv0_z6PQVd2wFFjL80tY" />
   <title>AI Tools Hub</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="logo.png" as="image">
   <style>
-     :root {
+  :root {
       --bg-color: #f0f4f8;
       --text-color: #1e293b;
       --header-bg: #5b21b6;
@@ -298,53 +300,48 @@
     <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
   </nav>
 
-  <div class="container">
-    <div class="card">
+  <main class="container">
+    <section class="card">
       <h2>🔍 ChatGPT</h2>
       <p>Ask questions, get summaries, generate ideas — your 24/7 homework helper.</p>
-      <a href="https://chat.openai.com" target="_blank">Use ChatGPT</a>
-    </div>
+      <a href="https://chat.openai.com" target="_blank" rel="noopener">Use ChatGPT</a>
+    </section>
 
     <div class="ad-container">
-      <!-- Beautified Ad Container -->
-      <script src="https://fpyf8.com/88/tag.min.js" data-zone="157446" async data-cfasync="false"></script>
+      <script async defer src="https://fpyf8.com/88/tag.min.js" data-zone="157446" data-cfasync="false"></script>
     </div>
 
-    <div class="card">
+    <section class="card">
       <h2>📝 Grammarly</h2>
       <p>Fix grammar and polish your writing — perfect for school assignments.</p>
-      <a href="https://www.grammarly.com" target="_blank">Try Grammarly</a>
-    </div>
+      <a href="https://www.grammarly.com" target="_blank" rel="noopener">Try Grammarly</a>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>🔁 Quillbot</h2>
       <p>Paraphrase your content easily with Quillbot — stay original and clear.</p>
-      <a href="https://www.quillbot.com" target="_blank">Use Quillbot</a>
-    </div>
+      <a href="https://www.quillbot.com" target="_blank" rel="noopener">Use Quillbot</a>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>🧐 Notion AI</h2>
       <p>Organize notes, manage tasks, and use AI for creative writing.</p>
-      <a href="https://www.notion.so/product/ai" target="_blank">Explore Notion AI</a>
-    </div>
+      <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener">Explore Notion AI</a>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>🎨 Remove.bg</h2>
       <p>Remove image backgrounds in one click — useful for projects and thumbnails.</p>
-      <a href="https://www.remove.bg" target="_blank">Try Remove.bg</a>
-    </div>
+      <a href="https://www.remove.bg" target="_blank" rel="noopener">Try Remove.bg</a>
+    </section>
 
-    <a class="direct-link-button" href="https://otieu.com/4/9580184" target="_blank">🎁 Discover Bonus AI Tools</a>
-    
-    <!-- ✅ New Button Added Below -->
-    <a class="direct-link-button" href="https://otieu.com/4/9590594" target="_blank">🚀 More Smart Tools</a>
-
-  </div>
+    <a class="direct-link-button" href="https://otieu.com/4/9580184" target="_blank" rel="noopener">🎁 Discover Bonus AI Tools</a>
+    <a class="direct-link-button" href="https://otieu.com/4/9590594" target="_blank" rel="noopener">🚀 More Smart Tools</a>
+  </main>
 
   <div class="ad-container">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4726937826985027"
+    <script async defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4726937826985027"
       crossorigin="anonymous"></script>
-
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-client="ca-pub-4726937826985027"
@@ -362,11 +359,11 @@
   </footer>
 
   <script>
-    (function () {
+    window.addEventListener('load', function () {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
       updateThemeColor(savedTheme);
-    })();
+    });
 
     function toggleTheme() {
       const currentTheme = document.documentElement.getAttribute("data-theme");
