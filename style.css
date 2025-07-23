@@ -1,1 +1,117 @@
+/* style.min.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] {
+  --bg: #f0f4f8;
+  --text: #111;
+  --card: #ffffff;
+  --border: #ccc;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --card: #1e293b;
+  --border: #334155;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+nav a, .theme-toggle {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+nav a:hover, .theme-toggle:hover {
+  background-color: #1d4ed8;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.direct-link-button {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0.8rem 1.2rem;
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.direct-link-button:hover {
+  background-color: #059669;
+}
+
+.ad-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.bg-effect {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(99,102,241,0.1) 0%, transparent 80%);
+}
 /* style.css */
